@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roma</title>
+  <style>
+    body {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e4e4e4;
+    }
+
+    header {
+      width: 100%;
+      background-color: rgb(88, 88, 88);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 60px;
+      text-align: center;
+    }
+
+    /* Навигация */
+    .fg {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      background-color: rgb(88, 88, 88);
+      padding: 10px;
+    }
+
+    .fg p {
+      text-decoration: none;
+      background-color: rgb(88, 88, 88);
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: white;
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+
+    .fg p:hover {
+      background-color: rgb(71, 71, 71);
+      color: rgb(180, 180, 180);
+    }
+
+    .dev {
+      display: flex;
+      justify-content: center;
+      font-size: 32px;
+      text-align: center;
+    }
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    section img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .content {
+      background-color: #b4b4b4;
+      border-radius: 15px;
+      padding: 20px;
+      max-width: 500px;
+      flex: 1;
+    }
+
+    .content.dark {
+      background-color: #333;
+      color: white;
+    }
+
+    .content .odin {
+      font-size: 20px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .content .text {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    /* Мобильная адаптация */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 40px;
+      }
+
+      .fg {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .fg p {
+        width: 90%;
+        text-align: center;
+      }
+
+      section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .content {
+        width: 90%;
+      }
+
+      section img {
+        max-width: 90%;
+      }
+
+      .dev {
+        font-size: 24px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>РОМА</h1>
+  </header>
+
+  <div class="fg">
+    <p onclick="scrollToDiv('bio')">БИОГРАФИЯ</p>
+    <p onclick="scrollToDiv('int')">ИНТЕРЕСЫ</p>
+    <p onclick="scrollToDiv('auth')">АВТОР САЙТА</p>
+    <p onclick="scrollToDiv('cont')">КОНТАКТЫ</p>
+  </div>
+
+  <div id="bio" class="dev"><h2>БИОГРАФИЯ</h2></div>
+  <section>
+    <img src="roma.jpg" alt="Рома">
+    <div class="content">
+      <p class="odin">Рома или как некоторые называют - "ослоёб"</p>
+      <p class="text">Рома - легенда, ему 16 лет, проживает в стране Словакия, и он крутой тип. Он находится в крутом чате "Одмен чата умир" и принимает там активное участие!!! Он слегка туповат но одновременно и умный. Раньше он жил сам в общаге, но сейчас он снимает квартиру с мамой и живёт в кайф. Был в Египте и других странах. Как друг он 6/10 — прикольный.</p>
+    </div>
+  </section>
+
+  <div id="int" class="dev"><h2>ИНТЕРЕСЫ</h2></div>
+  <section>
+    <img src="samokat.jpg" alt="Самокат">
+    <div class="content dark">
+      <p class="odin">Интересы у Романа очень крутые</p>
+      <p class="text">Ему нравится кататься на его крутом самокате. Любит общаться с нами в чатике. Недавно из-за другого чела (Coolfire) у Романа появился интерес делать ставки. Ещё он работал доставщиком — вроде нравилось. А раньше искал общение через дайвинчик, но перестал, потому что там одни странные люди.</p>
+    </div>
+  </section>
+
+  <div id="auth" class="dev"><h2>АВТОР САЙТА</h2></div>
+  <section>
+    <img src="matvey.jpg" alt="Матвей">
+    <div class="content">
+      <p class="odin">Матвей</p>
+      <p class="text">Самый крутой программист, который создал этот замечательный сайт.</p>
+    </div>
+  </section>
+
+  <div id="cont" class="dev"><h2>КОНТАКТЫ</h2></div>
+  <section>
+    <div class="content dark">
+      <p class="odin">ГДЕ НАЙТИ РОМАНА?</p>
+      <p class="text">Телеграм: <b>@foxinventor</b><br>Пишите! Он с радостью ответит.</p>
+      <img src="image.png" alt="Telegram QR">
+    </div>
+  </section>
+
+  <footer>&copy; 2025 Roma</footer>
+
+  <script>
+    function scrollToDiv(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
